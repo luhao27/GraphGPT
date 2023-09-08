@@ -37,12 +37,12 @@ if __name__ == '__main__':
         parser.add_argument('--model_weight', type=str, help="path of model weights", required=True)
         parser.add_argument('--scaffold', action='store_true', default=False, help='condition on scaffold')
         parser.add_argument('--lstm', action='store_true', default=False, help='use lstm for transforming scaffold')
-        parser.add_argument('--csv_name', type=str, help="name to save the generated mols in csv format", required=True)
+        parser.add_argument('--csv_name', type=str, default = "", help="name to save the generated mols in csv format", required=False)
         parser.add_argument('--data_name', type=str, default = 'moses2', help="name of the dataset to train on", required=False)
         parser.add_argument('--batch_size', type=int, default = 512, help="batch size", required=False)
         parser.add_argument('--gen_size', type=int, default = 10000, help="number of times to generate from a batch", required=False)
-        parser.add_argument('--vocab_size', type=int, default = 26, help="number of layers", required=False)
-        parser.add_argument('--block_size', type=int, default = 54, help="number of layers", required=False)   
+        parser.add_argument('--vocab_size', type=int, default = 94, help="vocab", required=False)
+        parser.add_argument('--block_size', type=int, default = 100, help="number of layers", required=False)   
         parser.add_argument('--props', nargs="+", default = [], help="properties to be used for condition", required=False)
         parser.add_argument('--n_layer', type=int, default = 8, help="number of layers", required=False)
         parser.add_argument('--n_head', type=int, default = 8, help="number of heads", required=False)
@@ -50,7 +50,9 @@ if __name__ == '__main__':
         parser.add_argument('--lstm_layers', type=int, default = 2, help="number of layers in lstm", required=False)
 
         args = parser.parse_args()
-
+        
+        if(args.csv_name == ""):
+            args.csv_name = args.model_weight + ".csv"
 
         context = "C"
          
