@@ -1,6 +1,9 @@
 # GraphGPT
 Implementation of GraphGPT: Graph enhanced GPT for conditioned molecular generation
 
+![mhnn-method](./main.jpg)
+
+
 ## Note: 
 The training code and the full trained model are coming soon!
 
