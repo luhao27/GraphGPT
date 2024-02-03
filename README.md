@@ -25,3 +25,4 @@ python generate/generate.py
 
 Node: 
 Our code was developed with reference to the code of GPT-1 and MolGPT, and we would like to express our gratitude to them.
+If you have any questions, feel free to contact Hao Lu, luhao@stu.ouc.edu.cn
